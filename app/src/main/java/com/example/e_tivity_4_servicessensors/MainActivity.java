@@ -1,3 +1,6 @@
+// Oisin O'Sullivan
+// 21304971
+
 package com.example.e_tivity_4_servicessensors;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,7 +11,6 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
-import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,16 +28,15 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        serviceintent = new Intent(this,MusicService.class);
-
+        textview = findViewById(R.id.datatxt);
         PlayBtn = findViewById(R.id.play);
         StopBtn = findViewById(R.id.stop);
 
         PlayBtn.setOnClickListener(this);
         StopBtn.setOnClickListener(this);
 
-        textview = findViewById(R.id.datatxt);
         sensorMgr = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        serviceintent = new Intent(this,MusicService.class);
 
         if (sensorMgr!=null){
 
@@ -50,7 +51,6 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
 
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
-
 
         if (sensorEvent.sensor.getType()==Sensor.TYPE_PROXIMITY){
             ((TextView)findViewById(R.id.datatxt)).setText("values: "+ sensorEvent.values[0]);

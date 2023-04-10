@@ -1,3 +1,6 @@
+// Oisin O'Sullivan
+// 21304971
+
 package com.example.e_tivity_4_servicessensors;
 import android.app.Service;
 import android.content.Intent;
