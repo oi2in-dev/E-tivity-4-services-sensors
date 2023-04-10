@@ -4,12 +4,12 @@ plugins {
 
 android {
     namespace 'com.example.e_tivity_4_servicessensors'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.e_tivity_4_servicessensors"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
